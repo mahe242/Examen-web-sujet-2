@@ -1,0 +1,166 @@
+
+/* styles.css — ultra simple (formaté pour lisibilité) */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #fff url('https://listcarbrands.com/wp-content/uploads/2015/12/Ferrari-logos.jpg') center/cover no-repeat fixed;
+	color: #000;
+}
+
+/* rendre le contenu lisible par-dessus le fond */
+main {
+  background: rgba(255,255,255,0.88);
+  margin: 20px auto;
+  max-width: 1300px;
+  border-radius: 8px;
+  padding: 12px 16px 28px 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+header.simple-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.cart {
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 18px;
+	align-items: stretch; /* permet aux produits d'utiliser toute la largeur */
+}
+
+
+.product {
+	border: 1px solid #000;
+	padding: 12px;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: row; /* image à gauche, texte à droite */
+	gap: 16px;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.product img {
+	width: 45%;
+	max-width: 500px;
+	height: auto;
+	object-fit: cover;
+	border-radius: 6px;
+	border: 4px solid #000;
+	flex-shrink: 0;
+}
+
+.product .info {
+	flex: 1 1 auto;
+	padding: 6px 0 10px 0;
+}
+
+/* Responsive: revenir en colonne sur écrans étroits */
+@media (max-width: 800px) {
+	.product {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.product img {
+		width: 100%;
+		max-width: 1200px;
+	}
+	.product .info {
+		width: 100%;
+		padding-left: 0;
+	}
+}
+
+.product .name {
+	font-weight: 700;
+	margin-top: 6px;
+}
+
+.product .price {
+	color: #b30000;
+	font-weight: 700;
+	margin-top: 6px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+
+
+.btn {
+	background: #b30000;
+	color: #fff;
+	border: none;
+	padding: 8px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* petite description sous le nom */
+.product .desc {
+	color: #333;
+	font-size: 0.95rem;
+	margin-top: 6px;
+	font-weight: 700;
+	display: none; /* masqué par défaut, rendu contrôlé via .show */
+}
+
+.product .desc.show {
+  display: block;
+}
+
+.toggle-desc {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.toggle-desc:active { transform: translateY(1px); }
+
+.specs {
+	list-style: none;
+	padding: 6px 12px;
+	margin: 8px 0 0 0;
+	font-size: 0.95rem;
+	color: #333;
+	text-align: left;
+	max-width: 1100px;
+	display: none; /* masqué par défaut */
+}
+.specs.show { display: block; }
+.specs li { margin: 4px 0; }
+
+/* effet discret au survol */
+.product:hover {
+	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+	transform: translateY(-4px);
+	transition: all 180ms ease;
+}
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#fff url('https://listcarbrands.com/wp-content/uploads/2015/12/Ferrari-logos.jpg') center/cover no-repeat fixed;color:#000}main{background:rgba(255,255,255,.88);margin:20px auto;max-width:1300px;border-radius:8px;padding:12px 16px 28px 16px;box-shadow:0 6px 24px rgba(0,0,0,.08)}header.simple-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #ddd}header h1{font-size:1.2rem;margin:0;color:#fff}.cart{font-weight:700;font-size:.95rem}.products{display:flex;flex-direction:column;gap:20px;padding:18px;align-items:stretch}.product{border:1px solid #000;padding:12px;border-radius:6px;display:flex;flex-direction:row;gap:16px;align-items:flex-start;text-align:left}.product img{width:45%;max-width:500px;height:auto;object-fit:cover;border-radius:6px;border:4px solid #000;flex-shrink:0}.product .info{flex:1 1 auto;padding:6px 0 10px 0}@media (max-width:800px){.product{flex-direction:column;align-items:center;text-align:center}.product img{width:100%;max-width:1200px}.product .info{width:100%;padding-left:0}}.product .desc{color:#333;font-size:.95rem;margin-top:6px;font-weight:700;display:none}.product .desc.show{display:block}.toggle-desc{display:inline-block;margin-top:8px;padding:6px 8px;font-size:.85rem;border-radius:4px;border:1px solid #bbb;background:#f5f5f5;cursor:pointer}.toggle-desc:active{transform:translateY(1px)}.product .price{color:#b30000;font-weight:700;margin-top:6px;display:inline-flex;align-items:center;gap:6px}.specs{list-style:none;padding:6px 12px;margin:8px 0 0 0;font-size:.95rem;color:#333;text-align:left;max-width:1100px;display:none}.specs.show{display:block}.specs li{margin:4px 0}.product:hover{box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-4px);transition:all 180ms ease}.btn{margin-bottom:6px}
+.btn { margin-bottom: 6px; }
+
+
